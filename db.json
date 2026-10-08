@@ -1,0 +1,274 @@
+{
+  "users": [
+    {
+      "id": "227f",
+      "username": "aadhi12",
+      "email": "adhi@gmail.com",
+      "password": "adhi123"
+    },
+    {
+      "id": "fed1",
+      "username": "adithyan",
+      "email": "adhi@gmail.com",
+      "password": "adhi123"
+    },
+    {
+      "id": "74a1",
+      "username": "adhithyan",
+      "email": "adhi@gmail.com",
+      "password": "adhi123"
+    },
+    {
+      "id": "ade7",
+      "username": "ajithvs",
+      "email": "aji@gmail.com",
+      "password": "aji123"
+    },
+    {
+      "id": "4fd6",
+      "username": "adhithyan",
+      "email": "adhi@gmail.com",
+      "password": "adhi123"
+    },
+    {
+      "id": "a3d2",
+      "username": "Adithyan",
+      "email": "adithyan@gmail.com",
+      "password": "adhi123"
+    },
+    {
+      "username": "adithyan",
+      "email": "adhi@gmail.com",
+      "password": "adhi123",
+      "id": "LBeOJZSkG5Q"
+    }
+  ],
+  "admins": [
+    {
+      "id": "1",
+      "email": "admin@store.com",
+      "password": "admin123"
+    }
+  ],
+  "carts": [],
+  "orders": [],
+  "products": [
+    {
+      "id": "1",
+      "name": "New Balance 574",
+      "category": "Lifestyle",
+      "price": 89.99,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/1_ae6d77d2-30d3-400c-a7d8-9afc34cf52ec.png?v=1753265921&width=1946",
+      "description": "Classic everyday running shoe with premium comfort."
+    },
+    {
+      "id": "2",
+      "name": "New Balance Fresh Foam X",
+      "category": "Lifestyle",
+      "price": 129.99,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/1-2025-11-25T164121.251_d5c030e2-9818-4f5c-bf8a-4c84460f47d2.png?v=1764069149&width=1946",
+      "description": "Soft cushioning and lightweight performance."
+    },
+    {
+      "id": "3",
+      "name": "New Balance 990v6",
+      "category": "Lifestyle",
+      "price": 184.99,
+      "gender": "women",
+      "image": "https://www.superkicks.in/cdn/shop/files/1_cebfbeb1-a28b-41fd-b60f-0aa6f7747a46.png?v=1761394347&width=1946",
+      "description": "Premium craftsmanship made in the USA."
+    },
+    {
+      "id": "4",
+      "name": "New Balance FuelCell Rebel",
+      "category": "Lifestyle",
+      "price": 139.99,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/ecoms_6a76281d-7856-48a7-8c83-122a26d39374.png?v=1761394825&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "5",
+      "name": "New Balance FuelCell Gold",
+      "category": "Lifestyle",
+      "price": 149.99,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/1_a75dd1db-d8d8-4f5a-bd1f-a9c1c15ca2a9.png?v=1760607424&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "6",
+      "name": "New Balance Chetah Rebel",
+      "category": "Lifestyle",
+      "price": 119.99,
+      "gender": "women",
+      "image": "https://www.superkicks.in/cdn/shop/files/4_67b82b5c-970a-4ecf-9ad5-075b853d77d1.jpg?v=1752152458&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "7",
+      "name": "New Balance Pantom ",
+      "category": "Lifestyle",
+      "price": 132.9,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/1_e8d2d73b-0d72-44e2-8c79-99cb75a58724.png?v=1758270265&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "8",
+      "name": "New Balance Liger",
+      "category": "Lifestyle",
+      "price": 133.11,
+      "gender": "women",
+      "image": "https://www.superkicks.in/cdn/shop/files/1_d24741ab-0e6c-4aac-9c7b-719a40c2b12d.jpg?v=1742914393&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "9",
+      "name": "New Balance 550 balance",
+      "category": "Lifestyle",
+      "price": 154.12,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/1-2025-11-19T121011.157.png?v=1763534480&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "10",
+      "name": "New Balance 650 BLACK",
+      "category": "Lifestyle",
+      "price": 89.1,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/1_60e14af3-a45c-4f77-b0db-6c0991d44daa.png?v=1760607527&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "11",
+      "name": "New Balance Lazy Red",
+      "category": "Lifestyle",
+      "price": 201.09,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/1_05714eaa-b62c-476f-811a-f7fd4c0e668e.png?v=1756388201&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "12",
+      "name": "New Balance Rock White",
+      "category": "Lifestyle",
+      "price": 170.02,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/7_30469e3e-746d-45e9-a61d-e46a49cb15c0.jpg?v=1746002064&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "13",
+      "name": "New Balance BLACK CEMENT",
+      "category": "Lifestyle",
+      "price": 112.2,
+      "gender": "women",
+      "image": "https://www.superkicks.in/cdn/shop/files/1_1_93fa93cb-a170-417b-be3d-a81a1aa3f7fb.png?v=1752843835&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "14",
+      "name": "New Balance 327 GREY",
+      "category": "Lifestyle",
+      "price": 120.12,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/IMG_1873.jpg?v=1752322665&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "15",
+      "name": "New Balance RC42 BEIGE",
+      "category": "Lifestyle",
+      "price": 102.3,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/3_93d6b033-191c-4f0e-b392-f46463645bb7.jpg?v=1742914049&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "16",
+      "name": "New Balance 9060 BLUE",
+      "category": "Lifestyle",
+      "price": 140.12,
+      "gender": "women",
+      "image": "https://www.superkicks.in/cdn/shop/files/2_0d3eb865-e283-4620-ba5c-ef7599d3f27a.png?v=1753201513&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "17",
+      "name": "New Balance 9060 GREEN",
+      "category": "Lifestyle",
+      "price": 120.45,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/4_f55af9fb-8756-4bc3-9cef-76a03818d1ed.png?v=1755076359&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "18",
+      "name": "New Balance 9060 BROWN",
+      "category": "Lifestyle",
+      "price": 120.35,
+      "gender": "women",
+      "image": "https://www.superkicks.in/cdn/shop/files/1_e65f125f-81e0-43f3-b41e-c7bb5a1afa27.png?v=1760607554&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "19",
+      "name": "New Balance RC42 GREEN",
+      "category": "Lifestyle",
+      "price": 130.24,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/1_33a147d1-bad6-4a31-a5df-995b51ac1496.jpg?v=1747639676&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "20",
+      "name": "New Balance 1000 NAVY",
+      "category": "Lifestyle",
+      "price": 190,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/3-2025-08-26T133937.129.jpg?v=1756197152&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "21",
+      "name": "New Balance 327 GREY",
+      "category": "Lifestyle",
+      "price": 144.3,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/1_8444e3c9-f4df-4e32-852b-31f14e77f2f3.jpg?v=1752740262&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "22",
+      "name": "New Balance 327 BROWN",
+      "category": "Lifestyle",
+      "price": 120.34,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/1_25e86d4f-34e1-4cec-b5ae-a3c0fcef0214.jpg?v=1739182707&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "23",
+      "name": "New Balance RC42 BLACK",
+      "category": "Lifestyle",
+      "price": 300.09,
+      "gender": "men",
+      "image": "https://www.superkicks.in/cdn/shop/files/1_0cd7c42f-4b61-4b35-89bf-39dd0a6db1f4.jpg?v=1740575674&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    },
+    {
+      "id": "24",
+      "name": "New Balance 530 REFLECTION",
+      "category": "Lifestyle",
+      "gender": "men",
+      "price": 160.9,
+      "image": "https://www.superkicks.in/cdn/shop/files/1_80db88ef-1f05-4159-9862-ad14fef243b6.jpg?v=1729676548&width=1946",
+      "description": "Fast, responsive shoe for speed workouts."
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
