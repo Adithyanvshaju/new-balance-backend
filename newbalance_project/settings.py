@@ -29,7 +29,11 @@ SECRET_KEY = 'django-insecure-h7h=9(_uvpuyzz4+*!%-=d0y&$r$b$-i%61scf!*1=had^73q*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'new-balance-backend.onrender.com',
+]
 
 
 # Application definition
