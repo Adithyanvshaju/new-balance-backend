@@ -177,6 +177,5 @@ RAZORPAY_KEY_SECRET = os.getenv('RAZORPAY_KEY_SECRET')
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-     os.getenv('FRONTEND_URL')
-    
+    "https://ecommerce-userside-elg4.vercel.app",
 ]
