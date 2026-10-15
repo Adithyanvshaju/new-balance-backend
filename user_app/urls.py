@@ -3,51 +3,75 @@ from django.urls import path
 
 from .views import (
     RegisterAPIView,
+    LoginAPIView,
     ProfileAPIView,
     VerifyOTPAPIView,
     AdminLoginAPIView,
     AdminUserListAPIView,
     AdminUserDetailAPIView,
+    AdminAddProductAPIView,
+    AdminUserToggleBlockAPIView,
+    AdminDashboardStatsAPIView,
 )
 
-
 urlpatterns = [
-
+    # User authentication
     path(
-        'register/',
+        "register/",
         RegisterAPIView.as_view(),
-        name='register'
+        name="register",
     ),
-
     path(
-        'verify-otp/',
+        "login/",
+        LoginAPIView.as_view(),
+        name="login",
+    ),
+    path(
+        "verify-otp/",
         VerifyOTPAPIView.as_view(),
-        name='verify-otp'
+        name="verify-otp",
     ),
-
     path(
-        'profile/',
+        "profile/",
         ProfileAPIView.as_view(),
-        name='profile'
+        name="profile",
     ),
 
+    # Admin authentication
     path(
-        'admin/login/',
+        "admin/login/",
         AdminLoginAPIView.as_view(),
-        name='admin-login'
+        name="admin-login",
     ),
 
+    # Admin dashboard statistics
     path(
-        'admin/users/',
+        "admin/stats/",
+        AdminDashboardStatsAPIView.as_view(),
+        name="admin-stats",
+    ),
+
+    # Admin user management
+    path(
+        "admin/users/",
         AdminUserListAPIView.as_view(),
-        name='admin-users'
+        name="admin-users",
     ),
-
     path(
-        'admin/users/<int:pk>/',
+        "admin/users/<int:pk>/toggle-block/",
+        AdminUserToggleBlockAPIView.as_view(),
+        name="admin-user-toggle-block",
+    ),
+    path(
+        "admin/users/<int:pk>/",
         AdminUserDetailAPIView.as_view(),
-        name='admin-user-detail'
+        name="admin-user-detail",
     ),
 
+    # Admin product management
+    path(
+        "admin/products/add/",
+        AdminAddProductAPIView.as_view(),
+        name="admin-add-product",
+    ),
 ]
-

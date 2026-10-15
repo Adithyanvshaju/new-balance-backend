@@ -1,3 +1,4 @@
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -14,8 +15,8 @@ class AddToCartAPIView(APIView):
 
     def post(self, request):
 
-        product_id = request.data.get('product')
-        quantity = request.data.get('quantity', 1)
+        product_id = request.data.get("product")
+        quantity = request.data.get("quantity", 1)
 
         if not product_id:
             return Response(
@@ -23,7 +24,6 @@ class AddToCartAPIView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        # Validate quantity
         try:
             quantity = int(quantity)
         except (TypeError, ValueError):
@@ -39,11 +39,20 @@ class AddToCartAPIView(APIView):
             )
 
         try:
-            product = Product.objects.get(id=product_id)
+            product = Product.objects.get(
+                id=product_id,
+                is_active=True
+            )
         except Product.DoesNotExist:
             return Response(
-                {"error": "Product not found"},
+                {"error": "This product is unavailable."},
                 status=status.HTTP_404_NOT_FOUND
+            )
+
+        if quantity > product.stock:
+            return Response(
+                {"error": "Requested quantity exceeds available stock."},
+                status=status.HTTP_400_BAD_REQUEST
             )
 
         cart, created = Cart.objects.get_or_create(
@@ -57,7 +66,15 @@ class AddToCartAPIView(APIView):
         )
 
         if not created:
-            cart_item.quantity += quantity
+            new_quantity = cart_item.quantity + quantity
+
+            if new_quantity > product.stock:
+                return Response(
+                    {"error": "Requested quantity exceeds available stock."},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+
+            cart_item.quantity = new_quantity
             cart_item.save()
 
         serializer = CartItemSerializer(cart_item)
@@ -79,10 +96,11 @@ class CartAPIView(APIView):
         )
 
         cart_items = CartItem.objects.filter(
-            cart=cart
+            cart=cart,
+            product__is_active=True
         ).select_related(
-            'product',
-            'product__category'
+            "product",
+            "product__category"
         )
 
         serializer = CartItemSerializer(
@@ -100,7 +118,9 @@ class CartItemUpdateAPIView(APIView):
     def patch(self, request, item_id):
 
         try:
-            cart_item = CartItem.objects.get(
+            cart_item = CartItem.objects.select_related(
+                "product"
+            ).get(
                 id=item_id,
                 cart__user=request.user
             )
@@ -110,7 +130,15 @@ class CartItemUpdateAPIView(APIView):
                 status=status.HTTP_404_NOT_FOUND
             )
 
-        quantity = request.data.get('quantity')
+        if not cart_item.product.is_active:
+            return Response(
+                {
+                    "error": "This product is unavailable. Remove it from your cart."
+                },
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        quantity = request.data.get("quantity")
 
         if quantity is None:
             return Response(
@@ -118,7 +146,6 @@ class CartItemUpdateAPIView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        # Validate quantity
         try:
             quantity = int(quantity)
         except (TypeError, ValueError):
@@ -130,6 +157,12 @@ class CartItemUpdateAPIView(APIView):
         if quantity < 1:
             return Response(
                 {"error": "Quantity must be at least 1"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        if quantity > cart_item.product.stock:
+            return Response(
+                {"error": "Requested quantity exceeds available stock."},
                 status=status.HTTP_400_BAD_REQUEST
             )
 

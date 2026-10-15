@@ -7,10 +7,12 @@ from product_app.models import Product
 class Order(models.Model):
 
     STATUS_CHOICES = [
-        ('pending', 'Pending'),
-        ('paid', 'Paid'),
-        ('cancelled', 'Cancelled'),
-    ]
+    ("pending", "Pending"),
+    ("paid", "Paid"),
+    ("shipped", "Shipped"),
+    ("delivered", "Delivered"),
+    ("cancelled", "Cancelled"),
+]
 
     user = models.ForeignKey(
         User,
