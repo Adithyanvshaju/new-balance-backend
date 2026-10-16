@@ -11,7 +11,7 @@ from .serializers import ProductSerializer
 from .pagination import ProductPagination
 
 
-# Customer product listing, search, filters, and sorting
+
 class ProductListAPIView(generics.ListAPIView):
     serializer_class = ProductSerializer
     pagination_class = ProductPagination
@@ -43,8 +43,7 @@ class ProductListAPIView(generics.ListAPIView):
         return queryset
 
 
-# Customer product details
-# Inactive products return 404
+
 class ProductDetailAPIView(generics.RetrieveAPIView):
     queryset = Product.objects.select_related("category").filter(
         is_active=True
@@ -52,8 +51,7 @@ class ProductDetailAPIView(generics.RetrieveAPIView):
     serializer_class = ProductSerializer
 
 
-# Admin product listing
-# Includes active and inactive products
+
 class AdminProductListAPIView(generics.ListAPIView):
     queryset = Product.objects.select_related("category").all().order_by("id")
     serializer_class = ProductSerializer
@@ -61,7 +59,6 @@ class AdminProductListAPIView(generics.ListAPIView):
     permission_classes = [IsAdminUser]
 
 
-# Admin block/unblock product
 class ProductToggleStatusAPIView(APIView):
     permission_classes = [IsAdminUser]
 
@@ -77,7 +74,7 @@ class ProductToggleStatusAPIView(APIView):
         )
 
 
-# Admin view and update product
+
 class AdminProductDetailAPIView(generics.RetrieveUpdateAPIView):
     queryset = Product.objects.select_related("category").all()
     serializer_class = ProductSerializer

@@ -40,7 +40,7 @@ class CreateOrderAPIView(APIView):
 
             product = cart_item.product
 
-            # Prevent purchasing blocked products
+            
             if not product.is_active:
                 return Response(
                     {
@@ -52,7 +52,7 @@ class CreateOrderAPIView(APIView):
                     status=status.HTTP_400_BAD_REQUEST
                 )
 
-            # Check available stock
+            
             if cart_item.quantity > product.stock:
                 return Response(
                     {

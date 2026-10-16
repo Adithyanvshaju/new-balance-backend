@@ -8,7 +8,7 @@ from .views import (
 )
 
 urlpatterns = [
-    # Customer order APIs
+    
     path(
         "orders/create/",
         CreateOrderAPIView.as_view(),
@@ -20,7 +20,7 @@ urlpatterns = [
         name="order-list",
     ),
 
-    # Admin order APIs
+    
     path(
         "admin/orders/",
         AdminOrderListAPIView.as_view(),

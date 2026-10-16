@@ -41,40 +41,39 @@ class RegisterAPIView(APIView):
             email = serializer.validated_data['email']
             password = serializer.validated_data['password']
 
-            # Check if username already exists
+            
             if User.objects.filter(username=username).exists():
                 return Response(
                     {"message": "Username already exists"},
                     status=status.HTTP_400_BAD_REQUEST
                 )
 
-            # Check if email already exists
+            
             if User.objects.filter(email=email).exists():
                 return Response(
                     {"message": "Email already exists"},
                     status=status.HTTP_400_BAD_REQUEST
                 )
 
-            # Remove old pending registration for this email
+            
             PendingUser.objects.filter(email=email).delete()
 
-            # Create OTP
+            
             otp = str(random.randint(100000, 999999))
 
-            # Store registration details temporarily
+            
             PendingUser.objects.create(
                 username=username,
                 email=email,
                 password=password
             )
 
-            # Store OTP
+            
             EmailOTP.objects.create(
                 email=email,
                 otp=otp
             )
 
-            # Send OTP
             send_mail(
                 'New Balance Email Verification OTP',
                 f'Your OTP is {otp}. It is valid for 5 minutes.',
@@ -251,13 +250,11 @@ class AdminAddProductAPIView(APIView):
 
         category_name = str(category_name).strip()
 
-        # Find the category or create it if it doesn't exist.
         category, created = Category.objects.get_or_create(
             name=category_name
         )
 
-        # The serializer expects the category name,
-        # because it uses SlugRelatedField.
+        
         data["category"] = category.name
 
         serializer = StoreProductSerializer(data=data)
@@ -342,16 +339,16 @@ class AdminDashboardStatsAPIView(APIView):
     permission_classes = [IsAuthenticated, IsAdminUser]
 
     def get(self, request):
-        # Count customer accounts, excluding admin accounts.
+        
         total_users = User.objects.filter(
             is_staff=False,
             is_superuser=False
         ).count()
 
-        # Count all products.
+        #
         total_products = StoreProduct.objects.count()
 
-        # Count all orders.
+        
         total_orders = Order.objects.count()
 
         # Count orders by status.
@@ -365,7 +362,7 @@ class AdminDashboardStatsAPIView(APIView):
             status="cancelled"
         ).count()
 
-        # Calculate revenue from paid orders only.
+        
         total_revenue = (
             paid_orders.aggregate(
                 revenue=Sum("total_amount")

@@ -43,7 +43,7 @@ class CreatePaymentAPIView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        # Check if a Razorpay payment was already created
+        
         try:
             payment = Payment.objects.get(order=order)
 
@@ -138,7 +138,7 @@ class VerifyPaymentAPIView(APIView):
                 status=status.HTTP_404_NOT_FOUND
             )
 
-        # Prevent duplicate processing
+        
         if payment.status == 'paid':
             return Response(
                 {"message": "Payment already verified"},
@@ -166,9 +166,8 @@ class VerifyPaymentAPIView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        # with transaction.atomic():
+        
 
-        #     order = payment.order
         with transaction.atomic():
 
             print("VERIFY PAYMENT CALLED")
@@ -176,7 +175,7 @@ class VerifyPaymentAPIView(APIView):
 
             order = payment.order   
 
-            # Reduce stock
+            
             for order_item in order.items.select_related(
                 'product'
             ):
@@ -204,16 +203,16 @@ class VerifyPaymentAPIView(APIView):
                     product.stock
                 )
 
-            # Mark payment as paid
+            
             payment.razorpay_payment_id = razorpay_payment_id
             payment.status = 'paid'
             payment.save()
 
-            # Mark order as paid
+            
             order.status = 'paid'
             order.save()
 
-            # Clear cart
+            
             try:
                 cart = request.user.cart
                 cart.items.all().delete()

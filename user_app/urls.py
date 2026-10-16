@@ -15,7 +15,7 @@ from .views import (
 )
 
 urlpatterns = [
-    # User authentication
+    
     path(
         "register/",
         RegisterAPIView.as_view(),
@@ -37,21 +37,21 @@ urlpatterns = [
         name="profile",
     ),
 
-    # Admin authentication
+   
     path(
         "admin/login/",
         AdminLoginAPIView.as_view(),
         name="admin-login",
     ),
 
-    # Admin dashboard statistics
+    
     path(
         "admin/stats/",
         AdminDashboardStatsAPIView.as_view(),
         name="admin-stats",
     ),
 
-    # Admin user management
+   
     path(
         "admin/users/",
         AdminUserListAPIView.as_view(),
@@ -68,7 +68,7 @@ urlpatterns = [
         name="admin-user-detail",
     ),
 
-    # Admin product management
+    
     path(
         "admin/products/add/",
         AdminAddProductAPIView.as_view(),
