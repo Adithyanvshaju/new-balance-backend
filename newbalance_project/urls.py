@@ -24,32 +24,32 @@ from rest_framework_simplejwt.views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # User APIs
+    
     path('api/', include('user_app.urls')),
 
-    # Product APIs
+    
     path('api/', include('product_app.urls')),
 
-    # Cart APIs
+    
     path('api/', include('cart_app.urls')),
 
-    # Wishlist APIs
+    
     path('api/', include('wishlist_app.urls')),
 
-    # Order APIs
+    
     path('api/', include('order_app.urls')),
 
-    # Payment APIs
+    
     path('api/', include('payment_app.urls')),
 
-    # JWT login
+   
     path(
         'api/login/',
         TokenObtainPairView.as_view(),
         name='login',
     ),
 
-    # JWT access token refresh
+    
     path(
         'api/token/refresh/',
         TokenRefreshView.as_view(),

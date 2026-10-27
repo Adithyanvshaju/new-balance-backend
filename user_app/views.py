@@ -345,13 +345,13 @@ class AdminDashboardStatsAPIView(APIView):
             is_superuser=False
         ).count()
 
-        #
+        
         total_products = StoreProduct.objects.count()
 
         
         total_orders = Order.objects.count()
 
-        # Count orders by status.
+        
         paid_orders = Order.objects.filter(status="paid")
 
         pending_orders = Order.objects.filter(
